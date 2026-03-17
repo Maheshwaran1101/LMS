@@ -18,7 +18,7 @@ from meeting_logger import MeetingLogger
 import auth_utils
 
 # Page Configuration
-st.set_page_config(page_title="SavadikkaX", layout="wide", page_icon="🎙️")
+st.set_page_config(page_title="Mahessjxxx", layout="wide", page_icon="🎙️")
 
 # Function to get base64 of an image
 def get_base64_bin_file(bin_file):
