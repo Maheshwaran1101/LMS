@@ -1,0 +1,29 @@
+{
+    "session_id": "20260317_122714",
+    "transcript": {
+        "full_text": "ERROR: Model not loaded"
+    },
+    "summary": {
+        "text": "Note: Input too short for AI summary. Here is the transcript:\n\nERROR: Model not loaded"
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0.0,
+                "end": 204.87,
+                "text": "ERROR: Model not loaded"
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-03-17 12:27:14",
+        "duration": "0s",
+        "num_speakers": 1,
+        "model": "Vosk (Real-time)",
+        "summarizer": "Groq LLaMA 3.1",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}

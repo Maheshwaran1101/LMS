@@ -33,119 +33,157 @@ if os.path.exists(bg_img_path):
     bg_style = f"""
     <style>
     .stApp {{
-        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("data:image/jpge;base64,{bg_img_base64}");
-        background-attachment: fixed;
+        background: linear-gradient(135deg, #0f172a, #1e1b4b, #0a0f2c);
+        background-image: 
+            linear-gradient(rgba(10,10,30,0.8), rgba(10,10,30,0.9)),
+            url("data:image/jpeg;base64,{bg_img_base64}");
         background-size: cover;
+        background-attachment: fixed;
     }}
     </style>
     """
 else:
     bg_style = ""
 
-# Custom CSS for Glassmorphism and Premium Look
 st.markdown(bg_style + """
 <style>
-    /* Global Styles */
-    .stApp {
-        color: #ffffff;
-    }
-    
-    h1, h2, h3, .stMarkdown {
-        color: #ffffff !important;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    }
 
-    /* Glassmorphism Containers */
-    div[data-testid="stVerticalBlock"] > div:has(div.stExpander),
-    div[data-testid="stVerticalBlock"] > div:has(div.stAlert),
-    .stTabs [data-baseweb="tab-panel"],
-    .metric-card {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
+/* 🌌 Global Text */
+html, body, [class*="css"] {
+    color: #e2e8f0;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-    /* Tab Styling */
-    .stTabs [data-baseweb="tab-list"] {
-        background: rgba(0, 0, 0, 0.2);
-        padding: 10px;
-        border-radius: 10px;
-        gap: 10px;
-    }
-    
-    .stTabs [data-baseweb="tab"] {
-        height: 50px;
-        background-color: transparent !important;
-        border-radius: 5px;
-        border: none !important;
-        color: #ffffff !important;
-        font-weight: 600;
-    }
-    
-    .stTabs [aria-selected="true"] {
-        background-color: rgba(255, 255, 255, 0.15) !important;
-    }
+/* 🔥 Title Styling */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #22d3ee, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-    /* Sidebar Styling */
-    section[data-testid="stSidebar"] {
-        background-color: rgba(0, 0, 0, 0.4) !important;
-        backdrop-filter: blur(10px);
-    }
-    
-    section[data-testid="stSidebar"] .stMarkdown,
-    section[data-testid="stSidebar"] label {
-        color: #ffffff !important;
-    }
+/* ✨ Glass Cards (Stronger effect) */
+.glass-card,
+div[data-testid="stVerticalBlock"] > div:has(div.stExpander),
+.stTabs [data-baseweb="tab-panel"] {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 20px;
 
-    /* Status Indicators */
-    .status-recording { color: #ff4b4b; font-weight: bold; text-shadow: 0 0 10px rgba(255, 75, 75, 0.5); }
-    .status-transcribing { color: #ffa500; font-weight: bold; text-shadow: 0 0 10px rgba(255, 165, 0, 0.5); }
-    .status-summarizing { color: #00ccff; font-weight: bold; text-shadow: 0 0 10px rgba(0, 204, 255, 0.5); }
-    .status-idle { color: #00ff88; font-weight: bold; text-shadow: 0 0 10px rgba(0, 255, 136, 0.5); }
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    /* Transcript Box */
-    .transcript-box { 
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(5px);
-        padding: 15px; 
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 10px; 
-        margin: 10px 0;
-        max-height: 400px;
-        overflow-y: auto;
-        color: #e0e0e0;
-    }
+    border: 1px solid rgba(255,255,255,0.12);
 
-    /* Buttons */
-    .stButton > button {
-        background: rgba(255, 255, 255, 0.1) !important;
-        color: white !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        backdrop-filter: blur(5px);
-        transition: all 0.3s ease;
-    }
-    
-    .stButton > button:hover {
-        background: rgba(255, 255, 255, 0.2) !important;
-        border-color: rgba(255, 255, 255, 0.4) !important;
-        transform: translateY(-2px);
-    }
+    box-shadow: 
+        0 8px 32px rgba(0,0,0,0.5),
+        inset 0 0 10px rgba(255,255,255,0.05);
+}
 
-    /* Success/Warning/Error Overrides */
-    .stAlert {
-        background: rgba(255, 255, 255, 0.05) !important;
-        color: white !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    }
+/* 🌈 Neon Border Glow */
+.glass-card:hover {
+    border: 1px solid rgba(99,102,241,0.6);
+    box-shadow: 
+        0 0 15px rgba(99,102,241,0.6),
+        0 0 40px rgba(34,211,238,0.3);
+    transition: 0.3s ease;
+}
+
+/* 📊 Tabs (Modern Style) */
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: #cbd5f5 !important;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(90deg, #6366f1, #22d3ee) !important;
+    color: white !important;
+    box-shadow: 0 0 10px rgba(99,102,241,0.6);
+}
+
+/* 📂 Sidebar */
+section[data-testid="stSidebar"] {
+    background: rgba(15, 23, 42, 0.7) !important;
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+/* 🎤 Status Indicators (Neon Glow) */
+.status-recording {
+    color: #ff4b4b;
+    text-shadow: 0 0 15px #ff4b4b;
+}
+.status-transcribing {
+    color: #facc15;
+    text-shadow: 0 0 15px #facc15;
+}
+.status-summarizing {
+    color: #38bdf8;
+    text-shadow: 0 0 15px #38bdf8;
+}
+.status-idle {
+    color: #4ade80;
+    text-shadow: 0 0 15px #4ade80;
+}
+
+/* 📜 Transcript Box */
+.transcript-box {
+    background: rgba(255,255,255,0.04);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    max-height: 400px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+}
+
+/* 🚀 Buttons */
+.stButton > button {
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    border: none !important;
+    color: white !important;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.stButton > button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(34,211,238,0.6);
+}
+
+/* ⚠ Alerts */
+.stAlert {
+    background: rgba(255,255,255,0.05) !important;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* 🌟 Divider */
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #6366f1, transparent);
+}
+
 </style>
 """, unsafe_allow_html=True)
 
 st.title("🎙️ Live Meeting Summarizer")
-st.markdown("*Real-time transcription, speaker diarization, and AI summarization*")
+st.markdown("*Real-time transcription • Speaker detection • Smart AI summary*")
 st.markdown("---")
 
 # Initialize logger
