@@ -5,6 +5,7 @@ import time
 import numpy as np
 from pydub import AudioSegment
 import soundfile as sf
+from pyannote.audio import Pipeline
 
 class RealtimeSTTModel:
     """Real-time Speech-to-Text using Vosk and Whisper"""

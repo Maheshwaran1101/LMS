@@ -17,14 +17,25 @@ from export_enhanced import (export_as_json, export_as_markdown, export_as_pdf,
 from meeting_logger import MeetingLogger
 import auth_utils
 
+#hugging face env variables
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+hf_token = os.getenv("HF_TOKEN")
+email_password = os.getenv("EMAIL_PASSWORD")
+
+
+
 # Page Configuration
 st.set_page_config(page_title="Mahessjxxx", layout="wide", page_icon="🎙️")
 
 # Function to get base64 of an image
-def get_base64_bin_file(bin_file):
-    with open(bin_file, 'rb') as f:
+def get_base64_bin_file(bin_file):                  #Convert any binary file to base64 string 
+    with open(bin_file, 'rb') as f:                  
         data = f.read()
-    return base64.b64encode(data).decode()
+    return base64.b64encode(data).decode()          #Store files as text instead of binary
 
 # Try to load background image
 bg_img_path = "background.jpg"
@@ -182,8 +193,47 @@ hr {
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🎙️ Live Meeting Summarizer")
-st.markdown("*Real-time transcription • Speaker detection • Smart AI summary*")
+st.markdown("""
+<style>
+.wave {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.wave span {
+  width: 3px;
+  height: 10px;
+  background: #22d3ee;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.wave span:nth-child(2) { animation-delay: 0.1s; }
+.wave span:nth-child(3) { animation-delay: 0.2s; }
+.wave span:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(2.5); }
+}
+</style>
+
+<div style="text-align:center; font-size:16px; line-height:2; color:#cbd5f5;">
+
+<div style="display:flex; justify-content:center; align-items:center; gap:10px;">
+<div class="wave"><span></span><span></span><span></span><span></span></div>
+<span>Real-time transcription</span>
+</div>
+
+<div style="display:flex; justify-content:center; align-items:center; gap:10px;">
+🎤 <span>Speaker detection</span>
+</div>
+
+<div style="display:flex; justify-content:center; align-items:center; gap:10px;">
+📊 <span>Smart AI summary</span>
+</div>
+
+</div>
+""", unsafe_allow_html=True)
 st.markdown("---")
 
 # Initialize logger
@@ -844,3 +894,5 @@ with tab5:
                 st.rerun()
     else:
         st.info("No previous sessions found. Start recording to create your first session!")
+        
+        

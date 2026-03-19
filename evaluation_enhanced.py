@@ -115,3 +115,4 @@ def get_benchmark_report():
 def calculate_wer(ref, hyp):
     evaluator = TranscriptionEvaluator()
     return evaluator.calculate_wer(ref, hyp)
+
