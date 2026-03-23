@@ -1,3 +1,4 @@
+from email.mime import text
 import os
 import threading
 import queue
@@ -503,18 +504,35 @@ class EnhancedDiarizer:
         except Exception as e:
             print(f"Diarization error: {e}")
             return self._fallback_diarization(audio_path, transcription_text)
-
+    
     def _align_text_with_segments(self, segments, text):
-        """Align transcription text with speaker segments"""
         words = text.split()
-        words_per_segment = len(words) // len(segments) if segments else len(words)
+        total_duration = sum([seg['end'] - seg['start'] for seg in segments])
 
-        for i, segment in enumerate(segments):
-            start_idx = i * words_per_segment
-            end_idx = (i + 1) * words_per_segment if i < len(segments) - 1 else len(words)
-            segment["text"] = " ".join(words[start_idx:end_idx])
+        current_idx = 0
+
+        for segment in segments:
+            duration = segment['end'] - segment['start']
+            proportion = duration / total_duration if total_duration > 0 else 0
+            word_count = int(proportion * len(words))
+
+            segment_words = words[current_idx:current_idx + word_count]
+            segment["text"] = " ".join(segment_words)
+
+            current_idx += word_count
 
         return segments
+    # def _align_text_with_segments(self, segments, text):
+    #     """Align transcription text with speaker segments"""
+    #     words = text.split()
+    #     words_per_segment = len(words) // len(segments) if segments else len(words)
+
+    #     for i, segment in enumerate(segments):
+    #         start_idx = i * words_per_segment
+    #         end_idx = (i + 1) * words_per_segment if i < len(segments) - 1 else len(words)
+    #         segment["text"] = " ".join(words[start_idx:end_idx])
+
+    #     return segments
 
     def _fallback_diarization(self, audio_path, text):
         """Fallback: single speaker"""
@@ -574,9 +592,9 @@ class EnhancedSummarizer:
         if self.model_type == "groq" and os.getenv("GROQ_API_KEY"):
             return self._summarize_with_groq(formatted_text)
         elif self.summarizer:
-            return self._summarize_with_transformers(text)
+            return self._summarize_with_transformers(formatted_text)
         else:
-            return self._simple_summary(text)
+            return self._simple_summary(formatted_text)
 
     def _format_diarized_text(self, segments):
         """Format diarized segments for summarization"""
@@ -613,8 +631,11 @@ Provide a concise summary in bullet points."""
             input_len = len(words)
             
             # Dynamic length constraints
-            max_len = min(130, int(input_len * 0.7))
-            min_len = min(30, int(input_len * 0.3))
+            max_len = min(120, int(input_len * 0.4))
+            min_len = min(40, int(input_len * 0.2))
+            
+            # max_len = min(130, int(input_len * 0.7))
+            # min_len = min(30, int(input_len * 0.3))
             
             if input_len > 500:
                 text = " ".join(words[:500])
