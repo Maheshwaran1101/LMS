@@ -1,0 +1,29 @@
+{
+    "session_id": "20260323_163050",
+    "transcript": {
+        "full_text": " Every girl needs to be financially independent. So you're not just someone's wife or someone's daughter or someone's sister. Your identity will be defined by your ability to be independent and that comes with finance in the world that we live today."
+    },
+    "summary": {
+        "text": "Note: Input too short for AI summary. Here is the transcript:\n\n Every girl needs to be financially independent. So you're not just someone's wife or someone's daughter or someone's sister. Your identity will be defined by your ability to be independent and that comes with finance in the world that we live today."
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0.0,
+                "end": 14.071,
+                "text": " Every girl needs to be financially independent. So you're not just someone's wife or someone's daughter or someone's sister. Your identity will be defined by your ability to be independent and that comes with finance in the world that we live today."
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-03-23 16:30:50",
+        "duration": "0s",
+        "num_speakers": 1,
+        "model": "Whisper (High Accuracy)",
+        "summarizer": "Groq LLaMA 3.1",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}

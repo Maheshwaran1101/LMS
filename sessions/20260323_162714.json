@@ -1,0 +1,29 @@
+{
+    "session_id": "20260323_162714",
+    "transcript": {
+        "full_text": "can you ask them plow parents hi hours tell you know bluebirds the killing two birds good deal to me be insanely low"
+    },
+    "summary": {
+        "text": "Note: Input too short for AI summary. Here is the transcript:\n\ncan you ask them plow parents hi hours tell you know bluebirds the killing two birds good deal to me be insanely low"
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0,
+                "end": 0.313621,
+                "text": "can you ask them plow parents hi hours tell you know bluebirds the killing two birds good deal to me be insanely low"
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-03-23 16:27:14",
+        "duration": "0s",
+        "num_speakers": 1,
+        "model": "Vosk (Real-time)",
+        "summarizer": "Groq LLaMA 3.1",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}
