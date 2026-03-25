@@ -37,7 +37,7 @@ def get_base64_bin_file(bin_file):                  #Convert any binary file to 
         data = f.read()
     return base64.b64encode(data).decode()          #Store files as text instead of binary
 
-# Try to load background image
+# loading a background image
 bg_img_path = "background.jpg"
 if os.path.exists(bg_img_path):
     bg_img_base64 = get_base64_bin_file(bg_img_path)
@@ -176,6 +176,7 @@ section[data-testid="stSidebar"] {
     box-shadow: 0 0 20px rgba(34,211,238,0.6);
 }
 
+
 /* ⚠ Alerts */
 .stAlert {
     background: rgba(255,255,255,0.05) !important;
@@ -201,15 +202,16 @@ st.markdown("""
 }
 
 .wave span {
-  width: 3px;
-  height: 10px;
-  background: #22d3ee;
-  animation: wave 1s infinite ease-in-out;
+  width: 4px;
+  height: 12px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #22d3ee, #6366f1);
 }
 
-.wave span:nth-child(2) { animation-delay: 0.1s; }
-.wave span:nth-child(3) { animation-delay: 0.2s; }
-.wave span:nth-child(4) { animation-delay: 0.3s; }
+.wave span:nth-child(1) { height: 8px; }
+.wave span:nth-child(2) { height: 12px; }
+.wave span:nth-child(3) { height: 10px; }
+.wave span:nth-child(4) { height: 14px; }
 
 @keyframes wave {
   0%, 100% { transform: scaleY(1); }
