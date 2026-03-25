@@ -49,7 +49,7 @@ if "processing_done" not in st.session_state:
 st.sidebar.title("⚙️ Settings")
 model_choice = st.sidebar.selectbox(
     "Select STT Model",
-    ["Whisper (High Accuracy)", "Vosk (Fast Local)"]
+    ["Whisper (High Accuracy)", "Vosk (Real-time)"]
 )
 use_diarization = st.sidebar.checkbox("Enable Speaker Diarization", value=True)
 summarizer_choice = st.sidebar.selectbox(
