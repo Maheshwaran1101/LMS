@@ -79,7 +79,7 @@ class SummaryEvaluator:
     def __init__(self):
         self.rouge_scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
 
-    def calculate_rouge(self, reference, hypothesis):
+    def calculate_rouge(self, reference, hypothesis):   #👉 This checks how good your summary is
         """Calculate ROUGE scores"""
         try:
             scores = self.rouge_scorer.score(reference, hypothesis)
@@ -103,8 +103,30 @@ class SummaryEvaluator:
         except Exception as e:
             print(f"ROUGE error: {e}")
             return {}
+        
+        """ | Type    | Meaning            |
+            | ------- | ------------------ |
+            | ROUGE-1 | word match         |
+            | ROUGE-2 | 2-word match       |
+            | ROUGE-L | sentence structure |
+            
+            AI is powerful
+            AI is amazing
+            
+            Reference Words:  AI | is | powerful
+            Summary Words:    AI | is | amazing
 
-    def calculate_bleu(self, reference, hypothesis):
+            Overlap → AI, is
+            
+            output will be:
+            {
+            "precision": how much predicted is correct
+            "recall": how much original is captured
+            "f1": balance of both
+            }
+"""
+
+    def calculate_bleu(self, reference, hypothesis):    #👉 Measures how close summary is to reference
         """Calculate BLEU score"""
         try:
             from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
@@ -119,9 +141,22 @@ class SummaryEvaluator:
         except Exception as e:
             print(f"BLEU error: {e}")
             return 0.0
+        
+        """ Example:
+            Reference: "AI helps humans"
+            Summary:   "AI helps people"
+
+            👉 High BLEU (similar meaning)
+
+            Diagram:
+            Reference → AI helps humans
+            Summary   → AI helps people
+
+            Match → AI helps
+        """
 
 
-def get_benchmark_report():
+def get_benchmark_report():  #function that compares models and returns a report of their performance on standard datasets. It shows accuracy,and speed.
     """Return benchmark results for different models"""
     return {
         "Whisper (Base)": {"WER": 0.08, "CER": 0.04, "Speed": "Slow"},
@@ -129,7 +164,37 @@ def get_benchmark_report():
         "Vosk (Small)": {"WER": 0.15, "CER": 0.08, "Speed": "Fast"},
         "Vosk (Large)": {"WER": 0.10, "CER": 0.05, "Speed": "Medium"}
     }
+    """
+    
+    WER = Word Error Rate
 
+👉 Lower = Better
+
+0.08 → very accurate ✅
+0.15 → more mistakes ❌
+🤖 Models in your example
+Whisper (Base)
+→ WER = 0.08 → very accurate
+Vosk (Small)
+→ WER = 0.15 → faster but less accurate
+📈 Understanding the Diagram
+Accuracy ↑
+│
+│   Whisper Base  (Best accuracy, slow)
+│   Whisper Tiny
+│   Vosk Large
+│   Vosk Small   (Fastest, least accurate)
+│
+└──────────────→ Speed
+👉 Simple meaning:
+Going UP ↑ → accuracy increases
+Going RIGHT → → speed increases
+💡 Easy way to understand
+Top = Accurate but slow
+Bottom = Fast but less accurate
+
+"""
+    
 
 # Legacy function for backward compatibility
 def calculate_wer(ref, hyp):
