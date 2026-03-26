@@ -201,3 +201,31 @@ def calculate_wer(ref, hyp):
     evaluator = TranscriptionEvaluator()
     return evaluator.calculate_wer(ref, hyp)
 
+
+"""
+REFERENCE TEXT
+        │
+        ▼
+PREDICTED TEXT
+        │
+        ▼
+   TranscriptionEvaluator
+        │
+        ├── WER
+        ├── CER
+        └── Detailed Errors
+        │
+        ▼
+SUMMARY MODEL
+        │
+        ▼
+GENERATED SUMMARY
+        │
+        ▼
+   SummaryEvaluator
+        │
+        ├── ROUGE
+        └── BLEU
+        
+        """
+
