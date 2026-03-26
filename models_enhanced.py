@@ -578,7 +578,7 @@ class EnhancedSummarizer:
         if not text or len(text.strip()) == 0:
             return "No text to summarize."
         
-        # Check against minimum length to avoid hallucinations (CNN/DailyMail models tend to hallucinate on short text)
+        # Check against minimum length to avoid hallucinations (CNN/DailyMail models tend to hallucinate(i.e, incorrect) on short text)
         word_count = len(text.split())
         if word_count < 50:
             return f"Note: Input too short for AI summary. Here is the transcript:\n\n{text}"

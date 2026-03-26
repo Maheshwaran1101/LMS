@@ -6,7 +6,7 @@ try:
 except:
     pass
 
-class TranscriptionEvaluator:
+class TranscriptionEvaluator:             #👉 To checks how correct your speech-to-text output is.
     """Evaluate STT performance using WER"""
 
     def __init__(self):
@@ -25,8 +25,21 @@ class TranscriptionEvaluator:
         except Exception as e:
             print(f"WER calculation error: {e}")
             return 0.0
+        """WER = (Substitutions + Deletions + Insertions) / Total Words
+        
+        - Substitutions: Words that were incorrectly recognized.
+        - Deletions: Words that were missed.
+        - Insertions: Words that were added erroneously.
+        - Total Words: The number of words in the reference transcript.
+        
+        Reference:  "I love AI"
+        Predicted:  "I like AI"
 
-    def calculate_cer(self, reference, hypothesis):
+        Error: love → like (1 substitution)
+
+        WER = 1 / 3 = 0.33"""
+
+    def calculate_cer(self, reference, hypothesis):   #👉 Same idea as WER but works on characters
         """Calculate Character Error Rate"""
         try:
             cer = jiwer.cer(reference, hypothesis)
@@ -34,6 +47,13 @@ class TranscriptionEvaluator:
         except Exception as e:
             print(f"CER calculation error: {e}")
             return 0.0
+        
+        """ Reference: "cat"
+            Predicted: "cut"
+
+            Error: a → u
+
+            CER = 1 / 3 = 0.33"""
 
     def get_detailed_metrics(self, reference, hypothesis):
         """Get detailed error metrics"""
