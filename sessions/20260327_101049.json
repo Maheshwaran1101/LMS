@@ -1,0 +1,29 @@
+{
+    "session_id": "20260327_101049",
+    "transcript": {
+        "full_text": "last summer in modern family when to yeah mountain for a deliberate they stayed in the small can be near beautiful it in reminding him i would have a copy of lead to watch the somebody sunday december mudslinging during the day they hate could it through the forest expert i'd known for what a false and too many photographs the evening this that by the first place sound saudis and the most a mushroom loss in my load left for sir the played surroundings and that james been with the family she promised us have to return the next year"
+    },
+    "summary": {
+        "text": "[Speaker 1]: last summer in modern family when to yeah mountain for a deliberate they stayed in the small can be near beautiful it in reminding him i would have a copy of lead to watch the somebody sunday december mudslinging during the day they hate could it through the forest expert i'd known for what a false and too many photographs the evening this that by the first place sound saudis and the most a mushroom loss in my load left for sir the played surroundings and that james been with the family she promised us have to return the next year"
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0,
+                "end": 42.155751,
+                "text": "last summer in modern family when to yeah mountain for a deliberate they stayed in the small can be near beautiful it in reminding him i would have a copy of lead to watch the somebody sunday december mudslinging during the day they hate could it through the forest expert i'd known for what a false and too many photographs the evening this that by the first place sound saudis and the most a mushroom loss in my load left for sir the played surroundings and that james been with the family she promised us have to return the next year"
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-03-27 10:10:49",
+        "duration": "42s",
+        "num_speakers": 1,
+        "model": "Vosk (Real-time)",
+        "summarizer": "Groq LLaMA 3.1",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}

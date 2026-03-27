@@ -1,0 +1,29 @@
+{
+    "session_id": "20260327_101612",
+    "transcript": {
+        "full_text": " Good morning, sir. Good morning. Tell me. Sir, I want to ask for leave. When do you need leave? Tomorrow, sir. Why do you need leave? There is a family function. How many days? Only one day, sir. Do you have pending work? No, sir. I will finish it today. That's good. Thank you for understanding. All right, you can take leave. I really appreciate it, sir. Okay."
+    },
+    "summary": {
+        "text": "[Speaker 1]:  Good morning, sir. Good morning. Tell me."
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0.0,
+                "end": 38.059,
+                "text": " Good morning, sir. Good morning. Tell me. Sir, I want to ask for leave. When do you need leave? Tomorrow, sir. Why do you need leave? There is a family function. How many days? Only one day, sir. Do you have pending work? No, sir. I will finish it today. That's good. Thank you for understanding. All right, you can take leave. I really appreciate it, sir. Okay."
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-03-27 10:16:12",
+        "duration": "38s",
+        "num_speakers": 1,
+        "model": "Whisper (High Accuracy)",
+        "summarizer": "Groq LLaMA 3.1",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}

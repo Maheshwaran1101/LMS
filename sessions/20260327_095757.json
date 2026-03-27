@@ -1,0 +1,29 @@
+{
+    "session_id": "20260327_095757",
+    "transcript": {
+        "full_text": " MC,"
+    },
+    "summary": {
+        "text": "Note: Input too short for AI summary. Here is the transcript:\n\n MC,"
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0.0,
+                "end": 4.992,
+                "text": " MC,"
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-03-27 09:57:57",
+        "duration": "3s",
+        "num_speakers": 1,
+        "model": "Whisper (High Accuracy)",
+        "summarizer": "Groq LLaMA 3.1",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}
