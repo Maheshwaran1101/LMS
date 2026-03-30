@@ -1,0 +1,29 @@
+{
+    "session_id": "20260327_125458",
+    "transcript": {
+        "full_text": " Lost Summer, M.O and their family went to a mountain for a trip. They stayed in the small cabin near beautiful lake. Every morning M.O would wake up early to watch the sunrise and listen to the birds singing. During the day they hike through the forest, explored hidden for waterfalls and took many photographs. The evening they sat by the first place, sad sorries and roasted marshmallows. M.O allowed the fresh air, the quiet surroundings and the time spent with their family. She promised herself to return the next year."
+    },
+    "summary": {
+        "text": "[Speaker 1]:  Lost Summer, M.O and their family went to a mountain for a trip. They stayed in the small cabin near beautiful lake. Every morning M.O would wake up early to watch the sunrise and listen to the birds singing."
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0.0,
+                "end": 41.643,
+                "text": " Lost Summer, M.O and their family went to a mountain for a trip. They stayed in the small cabin near beautiful lake. Every morning M.O would wake up early to watch the sunrise and listen to the birds singing. During the day they hike through the forest, explored hidden for waterfalls and took many photographs. The evening they sat by the first place, sad sorries and roasted marshmallows. M.O allowed the fresh air, the quiet surroundings and the time spent with their family. She promised herself to return the next year."
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-03-27 12:54:58",
+        "duration": "42s",
+        "num_speakers": 1,
+        "model": "Whisper (High Accuracy)",
+        "summarizer": "BART",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}
