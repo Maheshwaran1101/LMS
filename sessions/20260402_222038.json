@@ -1,0 +1,29 @@
+{
+    "session_id": "20260402_222038",
+    "transcript": {
+        "full_text": " Many people speak before the 8th. I know the value of words were sent to make you a good human being. If you were sold it would have been so forever. So the most worthy use of quality words is that I know they call it adversity and quality of duty. The quality of weakness is what is threatened. They call these tables and all of a sudden it's a table."
+    },
+    "summary": {
+        "text": "[Speaker 1]:  Many people speak before the 8th. I know the value of words were sent to make you a good human being. If you were sold it would have been so forever."
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0.0,
+                "end": 25.024,
+                "text": " Many people speak before the 8th. I know the value of words were sent to make you a good human being. If you were sold it would have been so forever. So the most worthy use of quality words is that I know they call it adversity and quality of duty. The quality of weakness is what is threatened. They call these tables and all of a sudden it's a table."
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-04-02 22:20:38",
+        "duration": "26s",
+        "num_speakers": 1,
+        "model": "Whisper (High Accuracy)",
+        "summarizer": "Groq LLaMA 3.1",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}

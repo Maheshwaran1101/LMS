@@ -1,0 +1,29 @@
+{
+    "session_id": "20260402_223451",
+    "transcript": {
+        "full_text": " Awards. Many people speak before they think. But I know the value of words. The words can make you break you. They can heal your soul. They can damage you forever. So I always try to use the positive words in my life wherever I go. They call it adversity. I call it opportunity. They call it weakness. I call it strength. They call me disabled. I call myself differently"
+    },
+    "summary": {
+        "text": "[Speaker 1]:  Awards. Many people speak before they think. But I know the value of words."
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0.0,
+                "end": 25.387,
+                "text": " Awards. Many people speak before they think. But I know the value of words. The words can make you break you. They can heal your soul. They can damage you forever. So I always try to use the positive words in my life wherever I go. They call it adversity. I call it opportunity. They call it weakness. I call it strength. They call me disabled. I call myself differently"
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-04-02 22:34:51",
+        "duration": "35s",
+        "num_speakers": 1,
+        "model": "Whisper (High Accuracy)",
+        "summarizer": "Groq LLaMA 3.1",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}

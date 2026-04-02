@@ -1,0 +1,29 @@
+{
+    "session_id": "20260402_221535",
+    "transcript": {
+        "full_text": " Shoot in the air just short of the man in the deep. Again slightly quicker for M132. The record coming down the weekend to try to use the pace. Maybe..."
+    },
+    "summary": {
+        "text": "Note: Input too short for AI summary. Here is the transcript:\n\n Shoot in the air just short of the man in the deep. Again slightly quicker for M132. The record coming down the weekend to try to use the pace. Maybe..."
+    },
+    "speakers": {
+        "segments": [
+            {
+                "speaker": "Speaker 1",
+                "start": 0.0,
+                "end": 15.189,
+                "text": " Shoot in the air just short of the man in the deep. Again slightly quicker for M132. The record coming down the weekend to try to use the pace. Maybe..."
+            }
+        ]
+    },
+    "metadata": {
+        "date": "2026-04-02 22:15:35",
+        "duration": "21s",
+        "num_speakers": 1,
+        "model": "Whisper (High Accuracy)",
+        "summarizer": "Groq LLaMA 3.1",
+        "metrics": {
+            "wer": 0
+        }
+    }
+}
